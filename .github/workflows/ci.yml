@@ -1,0 +1,13 @@
+# Placeholder until phase 01-scaffold adds Python lint/test jobs for src/promptdiff
+name: ci
+on:
+  push:
+    branches: [main, 'agent/**', 'release/**']
+  pull_request:
+    branches: [main]
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "CI will be implemented in phase 01-scaffold (pytest, ruff, mypy)"

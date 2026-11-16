@@ -1,0 +1,37 @@
+# Execution order for autonomous build. Prompt bodies: orchestration/prompts/
+# Integration branch for releases: release/candidate (human gate)
+
+phases:
+  - id: "00-architect"
+    branch: agent/00-architect
+    prompt: orchestration/prompts/00-architect.md
+    depends_on: main
+    merge_into: main
+
+  - id: "01-scaffold"
+    branch: agent/01-scaffold
+    prompt: orchestration/prompts/01-scaffold.md
+    depends_on: "00-architect"
+    merge_into: main
+
+  - id: "02-core"
+    branch: agent/02-core
+    prompt: orchestration/prompts/02-core.md
+    depends_on: "01-scaffold"
+    merge_into: main
+
+  - id: "03-test-loop"
+    branch: agent/03-test-loop
+    prompt: orchestration/prompts/03-test-loop.md
+    depends_on: "02-core"
+    merge_into: main
+    loop:
+      max_iterations: 5
+      until: ci_green_and_acceptance_fixtures_pass
+
+  - id: "04-integrate"
+    branch: release/candidate
+    prompt: orchestration/prompts/04-integrate.md
+    depends_on: "03-test-loop"
+    merge_into: main
+    human_gate: true
