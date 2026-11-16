@@ -17,5 +17,5 @@
 - [x] Acceptance test suite green
 
 ## Phase 04-integrate
-- [ ] README, RELEASE.md
-- [ ] release/candidate PR
+- [x] README, RELEASE.md
+- [x] release/candidate PR
