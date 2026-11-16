@@ -1,4 +1,4 @@
-from promptdiff.cli import main
+from promptdiff.cli import entrypoint
 
 if __name__ == "__main__":
-    main()
+    entrypoint()
