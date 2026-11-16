@@ -34,7 +34,7 @@ def build_case_diff(case: Case, out_a: Output, out_b: Output) -> CaseDiff:
 
     missing: list[str] = []
     req = case.expect.get("required_fields") or []
-    if req and jb is not None:
+    if req and obj_b is not None:
         for field in req:
             if field not in obj_b:
                 missing.append(field)
