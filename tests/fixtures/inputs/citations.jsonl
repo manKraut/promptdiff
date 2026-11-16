@@ -1,0 +1,3 @@
+{"id": "f1", "input": {"question": "1"}, "expect": {"format": "json", "required_fields": ["citations"]}}
+{"id": "f2", "input": {"question": "2"}, "expect": {"format": "json", "required_fields": ["citations"]}}
+{"id": "f3", "input": {"question": "3"}, "expect": {"format": "json", "required_fields": ["citations"]}}

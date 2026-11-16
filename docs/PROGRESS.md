@@ -1,20 +1,20 @@
 # Build progress
 
 ## Phase 01-scaffold
-- [ ] pyproject.toml and package layout
-- [ ] CI workflow
-- [ ] Smoke tests
+- [x] pyproject.toml and package layout
+- [x] CI workflow
+- [x] Smoke tests
 
 ## Phase 02-core
-- [ ] Models, template, config
-- [ ] Providers (openai, anthropic, ollama, recording)
-- [ ] Runner, cache, compare, rules, report
-- [ ] CLI commands
-- [ ] GitHub action package
+- [x] Models, template, config
+- [x] Providers (openai, anthropic, ollama, recording)
+- [x] Runner, cache, compare, rules, report
+- [x] CLI commands
+- [x] GitHub action package
 
 ## Phase 03-test-loop
-- [ ] Fixtures for scenarios 1–13
-- [ ] Acceptance test suite green
+- [x] Fixtures for scenarios 1–13
+- [x] Acceptance test suite green
 
 ## Phase 04-integrate
 - [ ] README, RELEASE.md

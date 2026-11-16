@@ -1,0 +1,4 @@
+inputs: tests/fixtures/inputs/five.jsonl
+model: {provider: recording, name: x}
+rules:
+  not_a_real_rule: 1

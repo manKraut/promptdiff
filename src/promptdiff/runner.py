@@ -18,7 +18,7 @@ def run_case(
     use_cache: bool,
 ) -> Output:
     rendered = render(prompt_template, case.input)
-    key = cache_mod.cache_key(rendered, case.input, settings)
+    key = cache_mod.cache_key(rendered, case.input, settings, version)
     result: ProviderResult | None = None
 
     if use_cache:

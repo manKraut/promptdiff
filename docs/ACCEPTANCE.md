@@ -123,3 +123,24 @@ Each scenario uses Given / When / Then and maps to a requirement in SPEC.md.
 ## 5. Out of scope for acceptance
 
 Dashboard, accounts, history, dataset management, multi-turn traces, and judge quality. The judge is only checked for being off by default and never changing the exit code.
+
+## 6. Evidence (automation)
+
+| Scenario | Test |
+| --- | --- |
+| 1 | `tests/acceptance/test_scenarios.py::test_scenario1_identical_prompts_pass` |
+| 2 | `test_scenario2_broken_json` |
+| 3 | `test_scenario3_missing_field` |
+| 4 | `test_scenario4_length_threshold` |
+| 5 | `test_scenario5_refusal_increase` |
+| 6 | `test_scenario6_cache_hit` |
+| 7 | `test_scenario7_provider_failure_isolation` |
+| 8 | `test_scenario8_config_error`, `test_scenario8_exit_code_via_run` |
+| 9 | `test_scenario9_pr_comment_sticky` |
+| 10 | `test_scenario10_no_prompt_change_no_run` |
+| 11 | `test_scenario11_fork_pr_message` |
+| 12 | `test_scenario12_secrets_hidden` |
+| 13 | `test_scenario13_speed_and_cost` |
+| Output formats | `test_output_formats_share_report` |
+| Report truncation | `test_report_truncation` |
+| Provider contract | `tests/test_providers_contract.py` |
