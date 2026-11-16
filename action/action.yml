@@ -1,0 +1,21 @@
+name: Promptdiff
+description: Compare LLM behavior when prompts change
+inputs:
+  prompts_glob:
+    description: Glob for prompt files
+    required: false
+    default: "prompts/**/*.txt"
+  config:
+    description: Path to promptdiff.yaml
+    required: false
+    default: promptdiff.yaml
+runs:
+  using: composite
+  steps:
+    - name: Run promptdiff
+      shell: bash
+      run: |
+        pip install -e "${{ github.action_path }}/.."
+        python -m promptdiff run --config "${{ inputs.config }}"
+      env:
+        PROMPTDIFF_RECORDING_FILE: ${{ github.action_path }}/../tests/fixtures/recordings/default.json
