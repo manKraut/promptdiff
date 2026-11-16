@@ -1,0 +1,18 @@
+# Example workflow for consumers — optional in this repo
+name: promptdiff-example
+on:
+  pull_request:
+    paths:
+      - "prompts/**"
+jobs:
+  promptdiff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - uses: ./action
+        env:
+          PROMPTDIFF_RECORDING_FILE: tests/fixtures/recordings/scenario1.json

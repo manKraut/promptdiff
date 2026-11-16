@@ -9,9 +9,7 @@ from promptdiff.models import ModelSettings, ProviderResult
 CACHE_DIR = Path(".promptdiff/cache")
 
 
-def cache_key(
-    prompt: str, case_input: dict, settings: ModelSettings, version: str = ""
-) -> str:
+def cache_key(prompt: str, case_input: dict, settings: ModelSettings, version: str = "") -> str:
     payload = json.dumps(
         {
             "prompt": prompt,
